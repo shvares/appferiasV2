@@ -1,4 +1,4 @@
-package com.asociacion.cultura.ui.main;
+package com.asociacion.ferias.patrocinadores.ui.main;
 
 import android.content.Context;
 
@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-
 import com.asociacion.ferias.R;
+
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to

@@ -1,4 +1,4 @@
-package com.asociacion.cultura;
+package com.asociacion.ferias.patrocinadores;
 
 import android.os.Bundle;
 
@@ -10,18 +10,16 @@ import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
-import com.asociacion.cultura.ui.main.SectionsPagerAdapter;
+import com.asociacion.ferias.patrocinadores.ui.main.SectionsPagerAdapter;
 
-public class Lista_Cultura extends AppCompatActivity {
+public class Lista_Patrocinadores extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista__cultura);
+        setContentView(R.layout.activity_lista__patrocinadores);
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);

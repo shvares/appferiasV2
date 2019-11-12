@@ -1,4 +1,4 @@
-package com.asociacion.patrocinadores.ui.main;
+package com.asociacion.ferias.patrocinadores.ui.main;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;

@@ -10,15 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.asociacion.patrocinadores.Lista_Patrocinadores"
+            android:name=".patrocinadores.Lista_Patrocinadores"
             android:label="@string/title_activity_lista__patrocinadores"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name="com.asociacion.cultura.Lista_Cultura"
+            android:name=".cultura.Lista_Cultura"
             android:label="@string/title_activity_lista__cultura"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.asociacion.conciertos.Lista_Conciertos"
+            android:name=".conciertos.Lista_Conciertos"
             android:label="@string/title_activity_lista__conciertos"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">

@@ -1,4 +1,4 @@
-package com.asociacion.conciertos;
+package com.asociacion.ferias.conciertos;
 
 import android.os.Bundle;
 
@@ -10,11 +10,9 @@ import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
-import com.asociacion.conciertos.ui.main.SectionsPagerAdapter;
+import com.asociacion.ferias.conciertos.ui.main.SectionsPagerAdapter;
 
 public class Lista_Conciertos extends AppCompatActivity {
 

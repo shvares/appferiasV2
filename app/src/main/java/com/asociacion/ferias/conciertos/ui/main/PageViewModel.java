@@ -1,4 +1,4 @@
-package com.asociacion.cultura.ui.main;
+package com.asociacion.ferias.conciertos.ui.main;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;

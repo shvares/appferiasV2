@@ -1,4 +1,4 @@
-package com.asociacion.patrocinadores;
+package com.asociacion.ferias.patrocinadores;
 
 import android.content.Context;
 import android.net.Uri;
