@@ -9,8 +9,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.asociacion.ferias.R;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,10 +33,23 @@ public class vista_conciertos extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private String evento;
+    private String urlEvento;
+    private String desEvento;
+
+    private ImageView imageView;
+    private TextView titulo;
+    private  TextView descrip;
+
+
     private OnFragmentInteractionListener mListener;
 
-    public vista_conciertos() {
-        // Required empty public constructor
+    public vista_conciertos(String nombre_event, String url, String act) {
+
+        evento = nombre_event;
+        urlEvento = url;
+        desEvento = act;
+
     }
 
     /**
@@ -45,8 +61,8 @@ public class vista_conciertos extends Fragment {
      * @return A new instance of fragment vista_conciertos.
      */
     // TODO: Rename and change types and number of parameters
-    public static vista_conciertos newInstance(String param1, String param2) {
-        vista_conciertos fragment = new vista_conciertos();
+    public static vista_conciertos newInstance(String param1, String param2, String param3) {
+        vista_conciertos fragment = new vista_conciertos(param1, param2, param3);
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,7 +83,19 @@ public class vista_conciertos extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vista_conciertos, container, false);
+        View vistaConcierto = inflater.inflate(R.layout.fragment_vista_conciertos, container, false);
+
+        imageView = vistaConcierto.findViewById(R.id.imageConcierto);
+        titulo = vistaConcierto.findViewById(R.id.txt_titulo_concierto);
+        descrip = vistaConcierto.findViewById(R.id.descript_concierto);
+
+        titulo.setText(evento);
+        descrip.setText(desEvento);
+        String url = urlEvento;
+
+        Picasso.get().load(url).resize(1500,1600).into(imageView);
+
+        return vistaConcierto;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

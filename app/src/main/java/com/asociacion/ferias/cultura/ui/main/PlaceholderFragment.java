@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 
 import com.asociacion.ferias.R;
+import com.asociacion.ferias.cultura.vista_cultura;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -24,11 +25,17 @@ public class PlaceholderFragment extends Fragment {
 
     private PageViewModel pageViewModel;
 
-    public static PlaceholderFragment newInstance(int index) {
-        PlaceholderFragment fragment = new PlaceholderFragment();
-        Bundle bundle = new Bundle();
-        bundle.putInt(ARG_SECTION_NUMBER, index);
-        fragment.setArguments(bundle);
+    public static Fragment newInstance(int index) {
+        Fragment fragment = null;
+        switch (index){
+            case 1:fragment=new vista_cultura("Evento Cultura No 1","https://cdn.pixabay.com/photo/2016/11/13/12/22/woman-1820868_960_720.jpg","Descripcion " +
+                    "de la actividad numero uno de la seccion cultura del municipio de nahuala de la feria 2019 realizado por SAI"); break;
+            case 2:fragment=new vista_cultura("Evento Cultura No 2","https://cdn.pixabay.com/photo/2017/01/28/02/24/japan-2014616_960_720.jpg","Descripcion " +
+                    "de la actividad numero dos de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK"); break;
+            case 3:fragment=new vista_cultura("Evento Cultura No 3","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
+                    "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
+
+        }
         return fragment;
     }
 
