@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ferias</string>
+    <string name="app_name">FeriasApp</string>
     <string name="title_activity_lista__conciertos">Lista_Conciertos</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
@@ -9,6 +9,10 @@
     <string name="btn_cultura">Cultura</string>
     <string name="btn_concierto">Conciertos</string>
     <string name="btn_patrocinadores">Patrocinadores</string>
+
+    <string name="txt_cultura">Titulo de cultura</string>
+    <string name="content_cultura">Contenido de imagen cultura</string>
+    <string name="descrip_cultura">Descripcion de actividades culturales en el municipio de nahuala</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
