@@ -19,46 +19,46 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167" />
+        app:layout_constraintVertical_bias="0.124" />
 
     <Button
-        android:background="@drawable/btn_redondo"
         android:id="@+id/btncultura"
         android:layout_width="128dp"
         android:layout_height="57dp"
+        android:background="@drawable/btn_redondo"
         android:text="@string/btn_cultura"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.212"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagen"
-        app:layout_constraintVertical_bias="0.271" />
+        app:layout_constraintVertical_bias="0.203" />
 
     <Button
-        android:background="@drawable/btn_redondo"
         android:id="@+id/btnconciertos"
         android:layout_width="128dp"
         android:layout_height="57dp"
+        android:background="@drawable/btn_redondo"
         android:text="@string/btn_concierto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toEndOf="@+id/btncultura"
         app:layout_constraintTop_toBottomOf="@+id/imagen"
-        app:layout_constraintVertical_bias="0.273" />
+        app:layout_constraintVertical_bias="0.203" />
 
     <Button
-        android:background="@drawable/btn_redondo"
         android:id="@+id/btnpatrocinadores"
         android:layout_width="174dp"
         android:layout_height="57dp"
+        android:background="@drawable/btn_redondo"
         android:text="@string/btn_patrocinadores"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagen"
-        app:layout_constraintVertical_bias="0.594" />
+        app:layout_constraintVertical_bias="0.51" />
 
     <TextView
         android:id="@+id/textDate"
