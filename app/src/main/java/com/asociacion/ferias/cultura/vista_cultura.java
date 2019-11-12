@@ -90,7 +90,7 @@ public class vista_cultura extends Fragment {
         descrip.setText(desEvento);
         String url = urlEvento;
 
-        Picasso.get().load(url).into(imageView);
+        Picasso.get().load(url).resize(1500,1600).into(imageView);
 
         return vista;
     }

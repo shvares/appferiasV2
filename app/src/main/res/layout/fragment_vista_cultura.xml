@@ -20,26 +20,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.115" />
 
     <ImageView
-        android:contentDescription="@string/descrip_cultura"
         android:id="@+id/imageEvents"
         android:layout_width="match_parent"
         android:layout_height="447dp"
+        android:contentDescription="@string/descrip_cultura"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.313"
+        app:layout_constraintVertical_bias="0.242"
         tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/descript_event"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:fontFamily="monospace"
+        android:fontFamily="serif"
         android:text="@string/descrip_cultura"
         android:textAlignment="center"
         android:textColor="#00BCD4"

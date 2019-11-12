@@ -14,6 +14,12 @@
     <string name="content_cultura">Contenido de imagen cultura</string>
     <string name="descrip_cultura">Descripcion de actividades culturales en el municipio de nahuala</string>
 
+    <string name="txt_concierto">Titulo de Conciertos</string>
+    <string name="content_concierto">Contenido de imagen conciertos</string>
+    <string name="descrip_concierto">Descripcion de los conciertos en el municipio de nahuala</string>
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_lista__cultura">Lista_Cultura</string>

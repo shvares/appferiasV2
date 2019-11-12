@@ -28,12 +28,12 @@ public class PlaceholderFragment extends Fragment {
     public static Fragment newInstance(int index) {
         Fragment fragment = null;
         switch (index){
-            case 1:fragment=new vista_cultura("Pagina 1","https://concepto.de/wp-content/uploads/2018/08/monta%C3%B1as-e1533762816593.jpg","Descripcion " +
-                    "de la actividad numero uno de la seccion cultura"); break;
-            case 2:fragment=new vista_cultura("Pagina 2","https://concepto.de/wp-content/uploads/2018/08/monta%C3%B1as-e1533762816593.jpg","Descripcion " +
-                    "de la actividad numero dos de la seccion cultura"); break;
-            case 3:fragment=new vista_cultura("Pagina 3","https://concepto.de/wp-content/uploads/2018/08/monta%C3%B1as-e1533762816593.jpg","Descripcion " +
-                    "de la actividad numero tres de la seccion cultura"); break;
+            case 1:fragment=new vista_cultura("Evento Cultura No 1","https://cdn.pixabay.com/photo/2016/11/13/12/22/woman-1820868_960_720.jpg","Descripcion " +
+                    "de la actividad numero uno de la seccion cultura del municipio de nahuala de la feria 2019 realizado por SAI"); break;
+            case 2:fragment=new vista_cultura("Evento Cultura No 2","https://cdn.pixabay.com/photo/2017/01/28/02/24/japan-2014616_960_720.jpg","Descripcion " +
+                    "de la actividad numero dos de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK"); break;
+            case 3:fragment=new vista_cultura("Evento Cultura No 3","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
+                    "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
 
         }
         return fragment;
