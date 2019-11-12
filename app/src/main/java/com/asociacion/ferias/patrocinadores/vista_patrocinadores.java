@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.asociacion.MapsActivity;
+import com.asociacion.ferias.MapsActivity;
 import com.asociacion.ferias.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -20,7 +20,6 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.asociacion.ferias.*;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -110,7 +109,7 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
         btnfb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), MapsActivity.class);
+               Intent intent = new Intent(getContext(), MapsActivity.class);
                 startActivity(intent);
             }
         });
@@ -146,7 +145,7 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
+
         LatLng sydney = new LatLng(lat,longi);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Aqui trabajop"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 17));
