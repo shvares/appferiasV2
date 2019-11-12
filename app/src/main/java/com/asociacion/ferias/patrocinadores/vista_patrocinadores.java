@@ -1,6 +1,7 @@
 package com.asociacion.ferias.patrocinadores;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -9,8 +10,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.asociacion.MapsActivity;
 import com.asociacion.ferias.R;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.asociacion.ferias.*;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,7 +30,7 @@ import com.asociacion.ferias.R;
  * Use the {@link vista_patrocinadores#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class vista_patrocinadores extends Fragment {
+public class vista_patrocinadores extends Fragment implements OnMapReadyCallback {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,6 +39,12 @@ public class vista_patrocinadores extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    MapView mapView;
+    GoogleMap mMap;
+    Double lat = 14.8382166;
+    Double longi = -91.5067797;
+    Button btnfb;
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,10 +80,42 @@ public class vista_patrocinadores extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        mapView.onResume();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mapView.onDestroy();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mapView.onPause();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vista_patrocinadores, container, false);
+        View vista = inflater.inflate(R.layout.fragment_vista_patrocinadores, container, false);
+        btnfb = vista.findViewById(R.id.btnfb);
+        mapView = vista.findViewById(R.id.mapa);
+        mapView.onCreate(savedInstanceState);
+        mapView.getMapAsync(this);
+
+        btnfb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        return vista;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -92,6 +140,16 @@ public class vista_patrocinadores extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(lat,longi);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Aqui trabajop"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 17));
     }
 
     /**
