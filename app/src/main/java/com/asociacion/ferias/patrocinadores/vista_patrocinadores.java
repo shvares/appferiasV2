@@ -109,12 +109,31 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
         btnfb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Intent intent = new Intent(getContext(), MapsActivity.class);
-                startActivity(intent);
+                Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
+                String facebookUrl = getFacebookPageURL(getContext());
+                facebookIntent.setData(Uri.parse(facebookUrl));
+                startActivity(facebookIntent);
             }
         });
 
         return vista;
+    }
+
+    public static String FACEBOOK_URL = "https://facebook.com/Shvares-Co-105058757601310/";
+    public static String FACEBOOK_PAGE_ID = "105058757601310";
+
+    //método que obtiene la verdadera URL
+    public  String getFacebookPageURL(Context context) {
+        try {
+            int versionCode = context.getPackageManager().getPackageInfo("com.facebook.katana", 0).versionCode;
+            if (versionCode >= 3002850) { //versiones nuevas de facebook
+                return "fb://facewebmodal/f?href=" + FACEBOOK_URL;
+            } else { //versiones antiguas de fb
+                return "fb://page/" + FACEBOOK_PAGE_ID;
+            }
+        } catch (Exception e) {
+            return FACEBOOK_URL; //normal web url
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
