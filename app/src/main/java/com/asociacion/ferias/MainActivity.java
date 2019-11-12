@@ -19,11 +19,12 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btncultura, btnconciertos, btnpatrocinadores;
+    private Button btncultura, btnconciertos, btnpatrocinadores;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         Calendar calendar = Calendar.getInstance();
         String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
@@ -31,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
         textViewDate.setText(currentDate);
 
 
-        btncultura = (Button) findViewById(R.id.btncultura);
-        btnconciertos = (Button) findViewById(R.id.btnconciertos);
-        btnpatrocinadores = (Button) findViewById(R.id.btnpatrocinadores);
+        btncultura =  findViewById(R.id.btncultura);
+        btnconciertos =  findViewById(R.id.btnconciertos);
+        btnpatrocinadores = findViewById(R.id.btnpatrocinadores);
 
         btncultura.setOnClickListener(new View.OnClickListener() {
             @Override
