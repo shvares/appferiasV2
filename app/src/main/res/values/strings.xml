@@ -15,4 +15,5 @@
     <string name="title_activity_lista__cultura">Lista_Cultura</string>
     <string name="title_activity_lista__patrocinadores">Lista_Patrocinadores</string>
     <string name="title_activity_mapa_general">Map</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
