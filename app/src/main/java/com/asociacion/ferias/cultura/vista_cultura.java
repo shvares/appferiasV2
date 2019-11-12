@@ -9,8 +9,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.asociacion.ferias.R;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,10 +33,21 @@ public class vista_cultura extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private String evento;
+    private String urlEvento;
+    private String desEvento;
+
+    private ImageView imageView;
+    private TextView titulo;
+    private  TextView descrip;
+
     private OnFragmentInteractionListener mListener;
 
-    public vista_cultura() {
+    public vista_cultura(String nombre_event, String url, String act) {
         // Required empty public constructor
+        evento = nombre_event;
+        urlEvento = url;
+        desEvento = act;
     }
 
     /**
@@ -45,8 +59,8 @@ public class vista_cultura extends Fragment {
      * @return A new instance of fragment vista_cultura.
      */
     // TODO: Rename and change types and number of parameters
-    public static vista_cultura newInstance(String param1, String param2) {
-        vista_cultura fragment = new vista_cultura();
+    public static vista_cultura newInstance(String param1, String param2, String param3) {
+        vista_cultura fragment = new vista_cultura(param1, param2, param3);
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,7 +81,18 @@ public class vista_cultura extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vista_cultura, container, false);
+        View vista = inflater.inflate(R.layout.fragment_vista_cultura, container, false);
+        imageView = vista.findViewById(R.id.imageEvents);
+        titulo = vista.findViewById(R.id.txt_titulo_events);
+        descrip = vista.findViewById(R.id.descript_event);
+
+        titulo.setText(evento);
+        descrip.setText(desEvento);
+        String url = urlEvento;
+
+        Picasso.get().load(url).into(imageView);
+
+        return vista;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
