@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.asociacion.ferias.R;
+import com.asociacion.ferias.patrocinadores.vista_patrocinadores;
 
 
 /**
@@ -24,11 +25,14 @@ public class PlaceholderFragment extends Fragment {
 
     private PageViewModel pageViewModel;
 
-    public static PlaceholderFragment newInstance(int index) {
-        PlaceholderFragment fragment = new PlaceholderFragment();
-        Bundle bundle = new Bundle();
-        bundle.putInt(ARG_SECTION_NUMBER, index);
-        fragment.setArguments(bundle);
+    public static Fragment newInstance(int index) {
+        Fragment fragment = null;
+        switch (index){
+            case 1: fragment = new vista_patrocinadores(); break;
+            case 2: fragment = new vista_patrocinadores(); break;
+            case 3: fragment = new vista_patrocinadores(); break;
+
+        }
         return fragment;
     }
 
