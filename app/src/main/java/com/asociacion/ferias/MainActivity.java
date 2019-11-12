@@ -5,11 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.asociacion.ferias.conciertos.Lista_Conciertos;
 import com.asociacion.ferias.cultura.Lista_Cultura;
 import com.asociacion.ferias.patrocinadores.Lista_Patrocinadores;
+
+import java.text.DateFormat;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Calendar calendar = Calendar.getInstance();
+        String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        TextView textViewDate = findViewById(R.id.textDate);
+        textViewDate.setText(currentDate);
+
 
         btncultura = (Button) findViewById(R.id.btncultura);
         btnconciertos = (Button) findViewById(R.id.btnconciertos);

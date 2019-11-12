@@ -4,6 +4,12 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
 
+    <string name="txt_date">Fecha del dia</string>
+    <string name="content_log">Contenido de logo</string>
+    <string name="btn_cultura">Cultura</string>
+    <string name="btn_concierto">Conciertos</string>
+    <string name="btn_patrocinadores">Patrocinadores</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_lista__cultura">Lista_Cultura</string>
