@@ -18,6 +18,10 @@
     <string name="content_concierto">Contenido de imagen conciertos</string>
     <string name="descrip_concierto">Descripcion de los conciertos en el municipio de nahuala</string>
 
+    <string name="content_patrocinador">Contenido de imagen patrocinador</string>
+    <string name="descrip_patrocinador">Información sobre su negocio datos generales</string>
+    <string name="text_patrocinador">Redes sociales: </string>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->
