@@ -31,21 +31,19 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="397dp"
-            android:layout_height="173dp"
+            android:layout_width="336dp"
+            android:layout_height="134dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             android:fontFamily="monospace"
             android:text="Descripcion patrocinador"
             android:textColor="#000000"
             android:textSize="10sp"
             app:layout_constraintBottom_toTopOf="@+id/mapa"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewPa1"
-            app:layout_constraintVertical_bias="0.09" />
+            app:layout_constraintVertical_bias="0.125" />
 
         <com.google.android.gms.maps.MapView
             android:id="@+id/mapa"
