@@ -11,8 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
-import com.asociacion.ferias.MapsActivity;
 import com.asociacion.ferias.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -20,6 +20,8 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.squareup.picasso.Picasso;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -39,11 +41,13 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
     private String mParam1;
     private String mParam2;
 
-    MapView mapView;
-    GoogleMap mMap;
-    Double lat = 14.8382166;
-    Double longi = -91.5067797;
-    Button btnfb;
+    private MapView mapView;
+    private GoogleMap mMap;
+    private Double lat = 14.8382166;
+    private Double longi = -91.5067797;
+    private Button btnfb;
+
+    private ImageView imageView;
 
     private OnFragmentInteractionListener mListener;
 
@@ -105,6 +109,12 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
         mapView = vista.findViewById(R.id.mapa);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+        imageView = vista.findViewById(R.id.imageViewPa1);
+
+
+        String url = "https://www.mrthink.es/wp-content/uploads/bfi_thumb/foto_mr.-think_blog_la-importancia-del-logo-32kclavus35t2vcikjco8xql1eviv9vku2sb4pxw28ov9n66g.jpg";
+
+        Picasso.get().load(url).resize(2500,1600).into(imageView);
 
         btnfb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,8 +129,10 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
         return vista;
     }
 
-    public static String FACEBOOK_URL = "https://facebook.com/Shvares-Co-105058757601310/";
-    public static String FACEBOOK_PAGE_ID = "105058757601310";
+
+    public static String FACEBOOK_URL = "https://www.facebook.com/Mulinik-2633364246733665";
+    public static String FACEBOOK_PAGE_ID = "2633364246733665";
+
 
     //método que obtiene la verdadera URL
     public  String getFacebookPageURL(Context context) {
