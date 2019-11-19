@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -13,6 +15,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.asociacion.ferias.R;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -108,7 +115,7 @@ public class vista_conciertos extends Fragment {
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+     * @param //param2 Parameter 2.
      * @return A new instance of fragment vista_conciertos.
      */
     // TODO: Rename and change types and number of parameters
@@ -168,6 +175,88 @@ public class vista_conciertos extends Fragment {
         Picasso.get().load(url).resize(1500,1600).into(imageView);
 
         return vistaConcierto;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final Query Ref = database.getReference("ferias").limitToFirst(1);
+        Ref.orderByChild("descripcion1").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
+                info inform = dataSnapshot.getValue(info.class);
+
+                switch (pantalla){
+                    case 1: pantalla1.setUrl(inform.url1);
+                        pantalla1.setDescripcion(inform.descripcion1);
+                        pantalla1.setTitulo(inform.titulo1);
+                        titulo.setText(pantalla1.getTitulo());
+                        descrip.setText(pantalla1.getDescripcion());
+                        Picasso.get().load(pantalla1.getUrl()).resize(1500,1600).into(imageView);
+                        break;
+                    case 2: pantalla2.setUrl(inform.url2);
+                        pantalla2.setDescripcion(inform.descripcion2);
+                        pantalla2.setTitulo(inform.titulo2);
+                        titulo.setText(pantalla2.getTitulo());
+                        descrip.setText(pantalla2.getDescripcion());
+                        Picasso.get().load(pantalla2.getUrl()).resize(1500,1600).into(imageView);
+                        break;
+                    case 3: pantalla3.setUrl(inform.url3);
+                        pantalla3.setDescripcion(inform.descripcion3);
+                        pantalla3.setTitulo(inform.titulo3);
+                        titulo.setText(pantalla3.getTitulo());
+                        descrip.setText(pantalla3.getDescripcion());
+                        Picasso.get().load(pantalla3.getUrl()).resize(1500,1600).into(imageView);
+                        break;
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                info inform = dataSnapshot.getValue(info.class);
+                switch (pantalla){
+                    case 1: pantalla1.setUrl(inform.url1);
+                        pantalla1.setDescripcion(inform.descripcion1);
+                        pantalla1.setTitulo(inform.titulo1);
+                        titulo.setText(pantalla1.getTitulo());
+                        descrip.setText(pantalla1.getDescripcion());
+                        Picasso.get().load(pantalla1.getUrl()).resize(1500,1600).into(imageView);
+                        break;
+                    case 2: pantalla2.setUrl(inform.url2);
+                        pantalla2.setDescripcion(inform.descripcion2);
+                        pantalla2.setTitulo(inform.titulo2);
+                        titulo.setText(pantalla2.getTitulo());
+                        descrip.setText(pantalla2.getDescripcion());
+                        Picasso.get().load(pantalla2.getUrl()).resize(1500,1600).into(imageView);
+                        break;
+                    case 3: pantalla3.setUrl(inform.url3);
+                        pantalla3.setDescripcion(inform.descripcion3);
+                        pantalla3.setTitulo(inform.titulo3);
+                        titulo.setText(pantalla3.getTitulo());
+                        descrip.setText(pantalla3.getDescripcion());
+                        Picasso.get().load(pantalla3.getUrl()).resize(1500,1600).into(imageView);
+                        break;
+                }
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+
+            // ...
+        });
     }
 
     // TODO: Rename method, update argument and hook method into UI event
