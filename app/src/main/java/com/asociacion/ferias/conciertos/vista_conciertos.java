@@ -41,16 +41,67 @@ public class vista_conciertos extends Fragment {
     private TextView titulo;
     private  TextView descrip;
 
+    private int pantalla;
+
+    public static class info {
+
+        public String descripcion1, descripcion2, descripcion3;
+        public String titulo1, titulo2, titulo3;
+        public String url1, url2, url3;
+
+
+        public info(){
+
+        }
+    }
+    public class  feria{
+        private String descripcion;
+        private String titulo;
+        private String url;
+        feria(){
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setDescripcion(String descripcion) {
+            this.descripcion = descripcion;
+        }
+
+        public void setTitulo(String titulo) {
+            this.titulo = titulo;
+        }
+
+        public String getDescripcion() {
+            return descripcion;
+        }
+
+        public String getTitulo() {
+            return titulo;
+        }
+    }
 
     private OnFragmentInteractionListener mListener;
 
-    public vista_conciertos(String nombre_event, String url, String act) {
+   /* public vista_conciertos(String nombre_event, String url, String act) {
 
         evento = nombre_event;
         urlEvento = url;
         desEvento = act;
 
+    }*/
+    public vista_conciertos(int pantalla){
+        this.pantalla=pantalla;
     }
+
+    feria pantalla1 = new feria();
+    feria pantalla2 = new feria();
+    feria pantalla3= new feria();
 
     /**
      * Use this factory method to create a new instance of
@@ -61,11 +112,11 @@ public class vista_conciertos extends Fragment {
      * @return A new instance of fragment vista_conciertos.
      */
     // TODO: Rename and change types and number of parameters
-    public static vista_conciertos newInstance(String param1, String param2, String param3) {
-        vista_conciertos fragment = new vista_conciertos(param1, param2, param3);
+    public static vista_conciertos newInstance(int param1) {
+        vista_conciertos fragment = new vista_conciertos(param1);
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putInt(ARG_PARAM1, param1);
+        //args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -75,7 +126,7 @@ public class vista_conciertos extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+           // mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -89,9 +140,30 @@ public class vista_conciertos extends Fragment {
         titulo = vistaConcierto.findViewById(R.id.txt_titulo_concierto);
         descrip = vistaConcierto.findViewById(R.id.descript_concierto);
 
-        titulo.setText(evento);
-        descrip.setText(desEvento);
-        String url = urlEvento;
+        titulo.setText("Hola");
+        descrip.setText("Ejemplo");
+        String url = "";
+
+        switch (pantalla){
+            case 1:
+                pantalla1.setUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1vQ4oaSCVsDvQsppuoG-9Rt2kdy9F6ji9vjtoBub_mEBUjWUT8w&s");
+                url = pantalla1.getUrl();
+                titulo.setText("Primera pantalla");
+                descrip.setText("Descripcion1");
+                break;
+            case 2:
+                pantalla2.setUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1vQ4oaSCVsDvQsppuoG-9Rt2kdy9F6ji9vjtoBub_mEBUjWUT8w&s");
+                url = pantalla2.getUrl();
+                titulo.setText("Segunda pantalla");
+                descrip.setText("Descripcion2");
+                break;
+            case 3:
+                pantalla3.setUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1vQ4oaSCVsDvQsppuoG-9Rt2kdy9F6ji9vjtoBub_mEBUjWUT8w&s");
+                url = pantalla3.getUrl();
+                titulo.setText("Tercera pantalla");
+                descrip.setText("Descripcion3");
+                break;
+        }
 
         Picasso.get().load(url).resize(1500,1600).into(imageView);
 
