@@ -34,21 +34,21 @@ public class PlaceholderFragment extends Fragment {
                     "de la actividad numero dos de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK"); break;
             case 3:fragment=new vista_cultura("Evento Cultura No 3","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
                     "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 4:fragment=new vista_cultura("Evento Cultura No 3","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
+            case 4:fragment=new vista_cultura("Evento Cultura No 4","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
                     "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 5:fragment=new vista_cultura("Evento Cultura No 3","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
+            case 5:fragment=new vista_cultura("Evento Cultura No 5","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
                     "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 6:fragment=new vista_cultura("Evento Cultura No 3","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
+            case 6:fragment=new vista_cultura("Evento Cultura No 6","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
                     "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 7:fragment=new vista_cultura("Evento Cultura No 3","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
+            case 7:fragment=new vista_cultura("Evento Cultura No 7","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
                     "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 8:fragment=new vista_cultura("Evento Cultura No 3","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
+            case 8:fragment=new vista_cultura("Evento Cultura No 8","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
                     "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 9:fragment=new vista_cultura("Evento Cultura No 3","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
+            case 9:fragment=new vista_cultura("Evento Cultura No 9","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
                     "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 10:fragment=new vista_cultura("Evento Cultura No 3","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
+            case 10:fragment=new vista_cultura("Evento Cultura No 10","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
                     "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 11:fragment=new vista_cultura("Evento Cultura No 3","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
+            case 11:fragment=new vista_cultura("Evento Cultura No 11","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
                     "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
 
         }
