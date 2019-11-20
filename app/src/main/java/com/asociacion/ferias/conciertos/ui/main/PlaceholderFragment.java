@@ -31,6 +31,7 @@ public class PlaceholderFragment extends Fragment {
             case 1:fragment=new vista_conciertos(1); break;
             case 2:fragment=new vista_conciertos(2); break;
             case 3:fragment=new vista_conciertos(3); break;
+            case 4:fragment=new vista_conciertos(4); break;
 
         }
         return fragment;

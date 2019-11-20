@@ -44,7 +44,7 @@ public class Lista_Conciertos extends AppCompatActivity implements vista_concier
     }
 
     private void agregarIndicadorPuntos(int pos) {
-        puntosSlide = new TextView[3];
+        puntosSlide = new TextView[4];
         linearPuntos.removeAllViews();
 
         for (int i =0;i<puntosSlide.length;i++){

@@ -52,9 +52,9 @@ public class vista_conciertos extends Fragment {
 
     public static class info {
 
-        public String descripcion1, descripcion2, descripcion3;
-        public String titulo1, titulo2, titulo3;
-        public String url1, url2, url3;
+        public String descripcion1, descripcion2, descripcion3, descripcion4;
+        public String titulo1, titulo2,titulo3, titulo4;
+        public String url1, url2, url3, url4;
 
 
         public info(){
@@ -108,7 +108,8 @@ public class vista_conciertos extends Fragment {
 
     feria pantalla1 = new feria();
     feria pantalla2 = new feria();
-    feria pantalla3= new feria();
+    feria pantalla3 = new feria();
+    feria pantalla4 = new feria();
 
     /**
      * Use this factory method to create a new instance of
@@ -188,6 +189,13 @@ public class vista_conciertos extends Fragment {
                         descrip.setText(pantalla3.getDescripcion());
                         Picasso.get().load(pantalla3.getUrl()).resize(1500,1600).into(imageView);
                         break;
+                    case 4: pantalla4.setUrl(inform.url4);
+                        pantalla4.setDescripcion(inform.descripcion4);
+                        pantalla4.setTitulo(inform.titulo4);
+                        titulo.setText(pantalla4.getTitulo());
+                        descrip.setText(pantalla4.getDescripcion());
+                        Picasso.get().load(pantalla4.getUrl()).resize(1500,1600).into(imageView);
+                        break;
                 }
             }
 
@@ -215,6 +223,13 @@ public class vista_conciertos extends Fragment {
                         titulo.setText(pantalla3.getTitulo());
                         descrip.setText(pantalla3.getDescripcion());
                         Picasso.get().load(pantalla3.getUrl()).resize(1500,1600).into(imageView);
+                        break;
+                    case 4: pantalla4.setUrl(inform.url4);
+                        pantalla4.setDescripcion(inform.descripcion4);
+                        pantalla4.setTitulo(inform.titulo4);
+                        titulo.setText(pantalla4.getTitulo());
+                        descrip.setText(pantalla4.getDescripcion());
+                        Picasso.get().load(pantalla4.getUrl()).resize(1500,1600).into(imageView);
                         break;
                 }
             }
