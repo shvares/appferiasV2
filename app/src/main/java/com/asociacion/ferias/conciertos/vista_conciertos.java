@@ -147,30 +147,9 @@ public class vista_conciertos extends Fragment {
         titulo = vistaConcierto.findViewById(R.id.txt_titulo_concierto);
         descrip = vistaConcierto.findViewById(R.id.descript_concierto);
 
-        titulo.setText("Hola");
-        descrip.setText("Ejemplo");
-        String url = "";
-
-        switch (pantalla){
-            case 1:
-                pantalla1.setUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1vQ4oaSCVsDvQsppuoG-9Rt2kdy9F6ji9vjtoBub_mEBUjWUT8w&s");
-                url = pantalla1.getUrl();
-                titulo.setText("Primera pantalla");
-                descrip.setText("Descripcion1");
-                break;
-            case 2:
-                pantalla2.setUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1vQ4oaSCVsDvQsppuoG-9Rt2kdy9F6ji9vjtoBub_mEBUjWUT8w&s");
-                url = pantalla2.getUrl();
-                titulo.setText("Segunda pantalla");
-                descrip.setText("Descripcion2");
-                break;
-            case 3:
-                pantalla3.setUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1vQ4oaSCVsDvQsppuoG-9Rt2kdy9F6ji9vjtoBub_mEBUjWUT8w&s");
-                url = pantalla3.getUrl();
-                titulo.setText("Tercera pantalla");
-                descrip.setText("Descripcion3");
-                break;
-        }
+        titulo.setText(" Cargando ... ");
+        descrip.setText("asegurate de tener Conexión a internet ");
+        String url = "https://firebasestorage.googleapis.com/v0/b/zunil-8cbba.appspot.com/o/conciertos%2Foffline-525700_960_720.webp?alt=media&token=306382be-8270-4672-a943-5b35645c6528";
 
         Picasso.get().load(url).resize(1500,1600).into(imageView);
 
