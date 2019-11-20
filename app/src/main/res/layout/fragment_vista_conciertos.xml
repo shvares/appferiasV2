@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".conciertos.vista_conciertos"
-    android:background="@drawable/background">
+    android:background=" #007ec8 ">
 
     <TextView
         android:id="@+id/txt_titulo_concierto"
