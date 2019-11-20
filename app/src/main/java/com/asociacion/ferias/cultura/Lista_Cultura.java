@@ -48,7 +48,7 @@ public class Lista_Cultura extends AppCompatActivity implements vista_cultura.On
     }
 
     private void agregarIndicadorPuntos(int pos) {
-        puntosSlide = new TextView[3];
+        puntosSlide = new TextView[11];
         linearPuntos.removeAllViews();
 
         for (int i =0;i<puntosSlide.length;i++){
