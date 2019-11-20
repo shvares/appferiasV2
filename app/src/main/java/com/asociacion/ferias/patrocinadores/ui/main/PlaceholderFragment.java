@@ -28,9 +28,9 @@ public class PlaceholderFragment extends Fragment {
     public static Fragment newInstance(int index) {
         Fragment fragment = null;
         switch (index){
-            case 1: fragment = new vista_patrocinadores(); break;
-            case 2: fragment = new vista_patrocinadores(); break;
-            case 3: fragment = new vista_patrocinadores(); break;
+            case 1: fragment = new vista_patrocinadores(1); break;
+            case 2: fragment = new vista_patrocinadores(2); break;
+            case 3: fragment = new vista_patrocinadores(3); break;
 
         }
         return fragment;

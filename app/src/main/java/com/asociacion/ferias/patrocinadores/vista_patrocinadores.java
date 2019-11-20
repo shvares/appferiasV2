@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.asociacion.ferias.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -49,10 +50,15 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
 
     private ImageView imageView;
 
+    private TextView info;
+
     private OnFragmentInteractionListener mListener;
 
-    public vista_patrocinadores() {
+    private int parocinador;
+    private  String lugar = "Descripcion";
+    public vista_patrocinadores(int patrocinador) {
         // Required empty public constructor
+        this.parocinador =  patrocinador;
     }
 
     /**
@@ -64,10 +70,10 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
      * @return A new instance of fragment vista_patrocinadores.
      */
     // TODO: Rename and change types and number of parameters
-    public static vista_patrocinadores newInstance(String param1, String param2) {
-        vista_patrocinadores fragment = new vista_patrocinadores();
+    public static vista_patrocinadores newInstance(int param1, String param2) {
+        vista_patrocinadores fragment = new vista_patrocinadores(param1);
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
+        args.putInt(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
@@ -110,9 +116,22 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
         imageView = vista.findViewById(R.id.imageViewPa1);
+        info = vista.findViewById(R.id.info);
 
+        info.setText("Este es un ejemplo");
 
         String url = "https://www.mrthink.es/wp-content/uploads/bfi_thumb/foto_mr.-think_blog_la-importancia-del-logo-32kclavus35t2vcikjco8xql1eviv9vku2sb4pxw28ov9n66g.jpg";
+        switch (parocinador){
+            case 1:
+                url = "https://firebasestorage.googleapis.com/v0/b/zunil-8cbba.appspot.com/o/patrocinadores%2F%C3%ADndice.jpg?alt=media&token=4c29cf1e-bdbb-4868-b00c-14f3b80b801f";
+                break;
+            case 2:
+                url = "https://firebasestorage.googleapis.com/v0/b/zunil-8cbba.appspot.com/o/patrocinadores%2F%C3%ADndice2.jpg?alt=media&token=93db0d70-1082-4de6-a78c-f67f1bba2bef";
+                break;
+            case 3:
+                url = "https://www.mrthink.es/wp-content/uploads/bfi_thumb/foto_mr.-think_blog_la-importancia-del-logo-32kclavus35t2vcikjco8xql1eviv9vku2sb4pxw28ov9n66g.jpg";
+                break;
+        }
 
         Picasso.get().load(url).resize(2500,1600).into(imageView);
 
@@ -178,7 +197,7 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
 
 
         LatLng sydney = new LatLng(lat,longi);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Aqui trabajop"));
+        mMap.addMarker(new MarkerOptions().position(sydney).title(lugar));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 17));
     }
 
