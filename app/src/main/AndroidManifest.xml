@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.asociacion.ferias">
+        package="com.asociacion.ferias">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality.
     -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+
+
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher_foreground"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher_foreground"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -27,12 +34,12 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCa3htM871j1GLn3-y2T6a93HPUo_95Xmo" />
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyCV_Sd7AkG1L9gbccENHVwkwnLL59JVd8c" />
 
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+                android:name=".MapsActivity"
+                android:label="@string/title_activity_maps"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -42,17 +49,17 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <activity
-            android:name=".patrocinadores.Lista_Patrocinadores"
-            android:label="@string/title_activity_lista__patrocinadores"
-            android:theme="@style/AppTheme.NoActionBar" />
+                android:name=".patrocinadores.Lista_Patrocinadores"
+                android:label="@string/title_activity_lista__patrocinadores"
+                android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".cultura.Lista_Cultura"
-            android:label="@string/title_activity_lista__cultura"
-            android:theme="@style/AppTheme.NoActionBar" />
+                android:name=".cultura.Lista_Cultura"
+                android:label="@string/title_activity_lista__cultura"
+                android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".conciertos.Lista_Conciertos"
-            android:label="@string/title_activity_lista__conciertos"
-            android:theme="@style/AppTheme.NoActionBar" />
+                android:name=".conciertos.Lista_Conciertos"
+                android:label="@string/title_activity_lista__conciertos"
+                android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
