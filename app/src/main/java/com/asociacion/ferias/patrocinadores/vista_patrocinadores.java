@@ -52,8 +52,8 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
 
     private MapView mapView;
     private GoogleMap mMap;
-    public Double lat = 14.8382166;
-    public Double longi = -91.5067797;
+    public Double lat = 14.8424866 ;
+    public Double longi = -91.318866;
     private Button btnfb;
 
     private ImageView imageView;
@@ -345,9 +345,21 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        /*switch (patrocinador){
+
+            case 1:
+                lat= 14.894940;
+                longi=-91.454930;
+                lugar = "Autopista los altos";
+                break;
+
+        }*/
+
+
         LatLng sydney = new LatLng(lat,longi);
         mMap.addMarker(new MarkerOptions().position(sydney).title(lugar));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 17));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 15));
+
     }
 
     /**

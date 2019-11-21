@@ -28,28 +28,17 @@ public class PlaceholderFragment extends Fragment {
     public static Fragment newInstance(int index) {
         Fragment fragment = null;
         switch (index){
-            case 1:fragment=new vista_cultura("Evento Cultura No 1","https://cdn.pixabay.com/photo/2016/11/13/12/22/woman-1820868_960_720.jpg","Descripcion " +
-                    "de la actividad numero uno de la seccion cultura del municipio de nahuala de la feria 2019 realizado por SAI"); break;
-            case 2:fragment=new vista_cultura("Evento Cultura No 2","https://cdn.pixabay.com/photo/2017/01/28/02/24/japan-2014616_960_720.jpg","Descripcion " +
-                    "de la actividad numero dos de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK"); break;
-            case 3:fragment=new vista_cultura("Evento Cultura No 3","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
-                    "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 4:fragment=new vista_cultura("Evento Cultura No 4","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
-                    "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 5:fragment=new vista_cultura("Evento Cultura No 5","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
-                    "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 6:fragment=new vista_cultura("Evento Cultura No 6","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
-                    "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 7:fragment=new vista_cultura("Evento Cultura No 7","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
-                    "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 8:fragment=new vista_cultura("Evento Cultura No 8","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
-                    "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 9:fragment=new vista_cultura("Evento Cultura No 9","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
-                    "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 10:fragment=new vista_cultura("Evento Cultura No 10","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
-                    "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
-            case 11:fragment=new vista_cultura("Evento Cultura No 11","https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg","Descripcion " +
-                    "de la actividad numero tres de la seccion cultura del municipio de nahuala de la feria 2019 realizado por MULINIK & SAI"); break;
+            case 1:fragment=new vista_cultura(1); break;
+            case 2:fragment=new vista_cultura(2); break;
+            case 3:fragment=new vista_cultura(3); break;
+            case 4:fragment=new vista_cultura(4); break;
+            case 5:fragment=new vista_cultura(5); break;
+            case 6:fragment=new vista_cultura(6); break;
+            case 7:fragment=new vista_cultura(7); break;
+            case 8:fragment=new vista_cultura(8); break;
+            case 9:fragment=new vista_cultura(9); break;
+            case 10:fragment=new vista_cultura(10); break;
+            case 11:fragment=new vista_cultura(11); break;
 
         }
         return fragment;
