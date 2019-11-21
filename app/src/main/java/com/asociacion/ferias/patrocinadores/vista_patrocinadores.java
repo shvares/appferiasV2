@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,12 +17,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.asociacion.ferias.R;
+import com.asociacion.ferias.conciertos.vista_conciertos;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 
 
@@ -50,16 +58,84 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
 
     private ImageView imageView;
 
-    private TextView info;
+    private TextView informacion;
 
     private OnFragmentInteractionListener mListener;
 
-    private int parocinador;
+    private int patrocinador;
+
+    private   String FACEBOOK_URL = "https://www.facebook.com/Mulinik-2633364246733665";
+    private   String FACEBOOK_PAGE_ID = "2633364246733665";
+
     private  String lugar = "Descripcion";
     public vista_patrocinadores(int patrocinador) {
         // Required empty public constructor
-        this.parocinador =  patrocinador;
+        this.patrocinador =  patrocinador;
     }
+
+    public static class info {
+
+        public String descripcion1;
+        public String facebook1;
+        public int idpagina1;
+        public float latiud1;
+        public String logo1;
+        public float logitud1;
+
+
+        public info(){
+
+        }
+    }
+
+    public class feria{
+        private String descripcion;
+        private String facebook;
+        private double idpagina;
+        private double latiud;
+        private String logo;
+        private double longitud;
+
+        public feria(){
+
+        }
+
+        public void datos(String descripcion, String facebook, double idpagina, double latiud, String logo, double logitud) {
+            this.descripcion = descripcion;
+            this.facebook = facebook;
+            this.idpagina = idpagina;
+            this.latiud = latiud;
+            this.logo = logo;
+            this.longitud = logitud;
+        }
+
+        public String getDescripcion() {
+            return descripcion;
+        }
+
+        public String getFacebook() {
+            return facebook;
+        }
+
+        public double getIdpagina() {
+            return idpagina;
+        }
+
+        public double getLatiud() {
+            return latiud;
+        }
+
+        public String getLogo() {
+            return logo;
+        }
+
+        public double getLongitud() {
+            return longitud;
+        }
+    }
+    feria pantalla1 = new feria();
+    feria pantalla2 = new feria();
+    feria pantalla3 = new feria();
 
     /**
      * Use this factory method to create a new instance of
@@ -116,20 +192,26 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
         imageView = vista.findViewById(R.id.imageViewPa1);
-        info = vista.findViewById(R.id.info);
+        informacion = vista.findViewById(R.id.info);
 
-        info.setText("Este es un ejemplo");
+        informacion.setText("Descripcion");
 
         String url = "https://www.mrthink.es/wp-content/uploads/bfi_thumb/foto_mr.-think_blog_la-importancia-del-logo-32kclavus35t2vcikjco8xql1eviv9vku2sb4pxw28ov9n66g.jpg";
-        switch (parocinador){
+        switch (patrocinador){
             case 1:
                 url = "https://firebasestorage.googleapis.com/v0/b/zunil-8cbba.appspot.com/o/patrocinadores%2F%C3%ADndice.jpg?alt=media&token=4c29cf1e-bdbb-4868-b00c-14f3b80b801f";
+                FACEBOOK_URL = "https://www.facebook.com/IK-CAF%C3%88-355137874873158/";
+                FACEBOOK_PAGE_ID = "355137874873158";
                 break;
             case 2:
                 url = "https://firebasestorage.googleapis.com/v0/b/zunil-8cbba.appspot.com/o/patrocinadores%2F%C3%ADndice2.jpg?alt=media&token=93db0d70-1082-4de6-a78c-f67f1bba2bef";
+                FACEBOOK_URL = "https://www.facebook.com/IK-CAF%C3%88-355137874873158/";
+                FACEBOOK_PAGE_ID = "355137874873158";
                 break;
             case 3:
                 url = "https://www.mrthink.es/wp-content/uploads/bfi_thumb/foto_mr.-think_blog_la-importancia-del-logo-32kclavus35t2vcikjco8xql1eviv9vku2sb4pxw28ov9n66g.jpg";
+                FACEBOOK_URL = "https://www.facebook.com/Mulinik-2633364246733665";
+                FACEBOOK_PAGE_ID = "2633364246733665";
                 break;
         }
 
@@ -148,10 +230,41 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
         return vista;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final Query Ref = database.getReference("patrocinadores").limitToFirst(1);
+        Ref.orderByChild("descripcion1").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
+               // info inform = dataSnapshot.getValue(info.class);
 
-    public static String FACEBOOK_URL = "https://www.facebook.com/Mulinik-2633364246733665";
-    public static String FACEBOOK_PAGE_ID = "2633364246733665";
+            }
 
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+
+            // ...
+        });
+
+    }
 
     //método que obtiene la verdadera URL
     public  String getFacebookPageURL(Context context) {
@@ -195,7 +308,14 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-
+        switch(patrocinador){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
         LatLng sydney = new LatLng(lat,longi);
         mMap.addMarker(new MarkerOptions().position(sydney).title(lugar));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 17));
