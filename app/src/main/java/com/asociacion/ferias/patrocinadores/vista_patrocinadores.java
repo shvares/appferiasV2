@@ -229,6 +229,19 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
                 info inform = dataSnapshot.getValue(info.class);
+                switch (patrocinador){
+                    case 1:
+                        pantalla1.datos(inform.descripcion1, inform.facebook1, inform.idpagina1, inform.logo1);
+                        Picasso.get().load(pantalla1.getLogo()).resize(1500,1600).into(imageView);
+                        informacion.setText(inform.descripcion1);
+                        FACEBOOK_URL = pantalla1.getFacebook();
+                        FACEBOOK_PAGE_ID = pantalla1.getIdpagina();
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                }
 
             }
 
