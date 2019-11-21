@@ -52,8 +52,8 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
 
     private MapView mapView;
     private GoogleMap mMap;
-    private Double lat = 14.8382166;
-    private Double longi = -91.5067797;
+    public Double lat = 14.8382166;
+    public Double longi = -91.5067797;
     private Button btnfb;
 
     private ImageView imageView;
@@ -75,10 +75,10 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
 
     public static class info {
 
-        public String descripcion1;
-        public String facebook1;
-        public String idpagina1;
-        public String logo1;
+        public String descripcion1, descripcion2, descripcion3;
+        public String facebook1, facebook2, facebook3;
+        public String idpagina1, idpagina2, idpagina3;
+        public String logo1, logo2, logo3;
 
 
         public info(){
@@ -190,8 +190,8 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
         switch (patrocinador){
             case 1:
                 url = "https://firebasestorage.googleapis.com/v0/b/zunil-8cbba.appspot.com/o/patrocinadores%2F%C3%ADndice.jpg?alt=media&token=4c29cf1e-bdbb-4868-b00c-14f3b80b801f";
-                FACEBOOK_URL = "https://www.facebook.com/IK-CAF%C3%88-355137874873158/";
-                FACEBOOK_PAGE_ID = "355137874873158";
+                FACEBOOK_URL = "https://www.facebook.com/Mulinik-2633364246733665";
+                FACEBOOK_PAGE_ID = "2633364246733665";
                 break;
             case 2:
                 url = "https://firebasestorage.googleapis.com/v0/b/zunil-8cbba.appspot.com/o/patrocinadores%2F%C3%ADndice2.jpg?alt=media&token=93db0d70-1082-4de6-a78c-f67f1bba2bef";
@@ -238,8 +238,18 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
                         FACEBOOK_PAGE_ID = pantalla1.getIdpagina();
                         break;
                     case 2:
+                        pantalla2.datos(inform.descripcion2, inform.facebook2, inform.idpagina2, inform.logo2);
+                        Picasso.get().load(pantalla2.getLogo()).resize(1500,1600).into(imageView);
+                        informacion.setText(inform.descripcion2);
+                        FACEBOOK_URL = pantalla2.getFacebook();
+                        FACEBOOK_PAGE_ID = pantalla2.getIdpagina();
                         break;
                     case 3:
+                        pantalla3.datos(inform.descripcion3, inform.facebook3, inform.idpagina3, inform.logo3);
+                        Picasso.get().load(pantalla3.getLogo()).resize(1500,1600).into(imageView);
+                        informacion.setText(inform.descripcion3);
+                        FACEBOOK_URL = pantalla3.getFacebook();
+                        FACEBOOK_PAGE_ID = pantalla3.getIdpagina();
                         break;
                 }
 
@@ -247,6 +257,30 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                info inform = dataSnapshot.getValue(info.class);
+                switch (patrocinador){
+                    case 1:
+                        pantalla1.datos(inform.descripcion1, inform.facebook1, inform.idpagina1, inform.logo1);
+                        Picasso.get().load(pantalla1.getLogo()).resize(1500,1600).into(imageView);
+                        informacion.setText(inform.descripcion1);
+                        FACEBOOK_URL = pantalla1.getFacebook();
+                        FACEBOOK_PAGE_ID = pantalla1.getIdpagina();
+                        break;
+                    case 2:
+                        pantalla2.datos(inform.descripcion2, inform.facebook2, inform.idpagina2, inform.logo2);
+                        Picasso.get().load(pantalla2.getLogo()).resize(1500,1600).into(imageView);
+                        informacion.setText(inform.descripcion2);
+                        FACEBOOK_URL = pantalla2.getFacebook();
+                        FACEBOOK_PAGE_ID = pantalla2.getIdpagina();
+                        break;
+                    case 3:
+                        pantalla3.datos(inform.descripcion3, inform.facebook3, inform.idpagina3, inform.logo3);
+                        Picasso.get().load(pantalla3.getLogo()).resize(1500,1600).into(imageView);
+                        informacion.setText(inform.descripcion3);
+                        FACEBOOK_URL = pantalla3.getFacebook();
+                        FACEBOOK_PAGE_ID = pantalla3.getIdpagina();
+                        break;
+                }
             }
 
             @Override
@@ -311,14 +345,6 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        switch(patrocinador){
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-        }
         LatLng sydney = new LatLng(lat,longi);
         mMap.addMarker(new MarkerOptions().position(sydney).title(lugar));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 17));
