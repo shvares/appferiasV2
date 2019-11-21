@@ -345,15 +345,24 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        /*switch (patrocinador){
+        switch (patrocinador){
 
             case 1:
-                lat= 14.894940;
-                longi=-91.454930;
-                lugar = "Autopista los altos";
+                lat= 14.842855;
+                longi= -91.318245;
+                lugar = "Nahuala";
                 break;
-
-        }*/
+            case 2:
+                lat= 14.842288;
+                longi=-91.317891;
+                lugar = "Ik' Cafe Restaurante";
+                break;
+            case 3:
+                lat= 14.838528;
+                longi=-91.506718;
+                lugar = "Mulinik C&S";
+                break;
+        }
 
 
         LatLng sydney = new LatLng(lat,longi);
