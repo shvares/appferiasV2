@@ -77,10 +77,8 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
 
         public String descripcion1;
         public String facebook1;
-        public int idpagina1;
-        public float latiud1;
+        public String idpagina1;
         public String logo1;
-        public float logitud1;
 
 
         public info(){
@@ -91,22 +89,19 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
     public class feria{
         private String descripcion;
         private String facebook;
-        private double idpagina;
-        private double latiud;
+        private String idpagina;
         private String logo;
-        private double longitud;
+
 
         public feria(){
 
         }
 
-        public void datos(String descripcion, String facebook, double idpagina, double latiud, String logo, double logitud) {
+        public void datos(String descripcion, String facebook, String idpagina, String logo) {
             this.descripcion = descripcion;
             this.facebook = facebook;
             this.idpagina = idpagina;
-            this.latiud = latiud;
             this.logo = logo;
-            this.longitud = logitud;
         }
 
         public String getDescripcion() {
@@ -117,21 +112,16 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
             return facebook;
         }
 
-        public double getIdpagina() {
+        public String getIdpagina() {
             return idpagina;
         }
 
-        public double getLatiud() {
-            return latiud;
-        }
+
 
         public String getLogo() {
             return logo;
         }
 
-        public double getLongitud() {
-            return longitud;
-        }
     }
     feria pantalla1 = new feria();
     feria pantalla2 = new feria();
@@ -238,7 +228,7 @@ public class vista_patrocinadores extends Fragment implements OnMapReadyCallback
         Ref.orderByChild("descripcion1").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
-               // info inform = dataSnapshot.getValue(info.class);
+                info inform = dataSnapshot.getValue(info.class);
 
             }
 
