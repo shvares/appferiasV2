@@ -16,3 +16,4 @@ app/google-services.json
 .project
 .settings/org.eclipse.buildship.core.prefs
 app/release/app-release.aab
+app/release/*
